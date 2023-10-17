@@ -1,0 +1,90 @@
+.shop{
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.shop h1{
+    text-align: center;
+}
+
+.shopList{
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.product{
+    flex: 30%;
+    margin-right: 20px;
+    margin-top: 1rem;
+    box-shadow: 1px 1px 2px #bdbcbc, -1px -1px 2px #bdbcbc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.product:hover{
+    transform: scale(1.03);
+    transition: all .25s ease;
+}
+
+.product img{
+    width: 100%;
+    height: 350px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.description{
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.description .name{
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin-top: 1rem;
+}
+
+.description .price{
+    font-size: 0.875rem;
+}
+
+.cartBtn{
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    background: transparent;
+    border: 1px solid #000;
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cartBtn:hover{
+    background: #000;
+    color: #fff;
+    transition: all .3s ease-in;
+}
+
+@media screen and (max-width: 700px) {
+    .product{
+        flex: 40%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .product{
+        flex: 100%;
+    }
+    .shop h1{
+        font-size: 1.2rem;
+    }
+}

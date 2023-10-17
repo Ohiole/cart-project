@@ -1,23 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './Components/Navbar';
+import Cart from './Pages/Cart';
+import Shop from './Pages/Shop';
+import { PRODUCTS } from './Products';
+import { useState } from 'react';
+import { ShopContext } from './Context/ShopContext';
+
+
+const getDefaultCart = () => {
+  let cart = {};
+  for (let i = 0; i < PRODUCTS.length + 1; i++) {
+      cart[i] = 0
+  }
+  return cart;
+}
+
 
 function App() {
+
+  const [cartItems, setCartItems] = useState(getDefaultCart());
+
+  const contextValues = {cartItems, setCartItems}
+  console.log(cartItems);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ShopContext.Provider value={contextValues}>
+        <Router>
+            <Navbar />
+            <Routes>
+              <Route path='/' element={<Shop />} />
+              <Route path='/cart' element={<Cart />} />
+            </Routes>
+        </Router>
+      </ShopContext.Provider>
     </div>
   );
 }

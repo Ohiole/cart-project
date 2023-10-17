@@ -1,0 +1,25 @@
+.navbar{
+    width: 100%;
+    background-color: #0a1326;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.links{
+    display: flex;
+    gap: 2em;
+    align-items: center;
+}
+
+.links a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.links a:hover{
+    color: #777777;
+    transition: all .3s ease-in-out;
+}
