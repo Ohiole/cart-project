@@ -24,6 +24,7 @@ function Cart() {
 
   return (
     <div className='cart'>
+      <h1>Ohis Cart Projects</h1>
       <h1>Your Cart Items</h1>
       <div className='cartItems'>
         {PRODUCTS.map((product) => {
